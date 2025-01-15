@@ -2,8 +2,21 @@ import { fetchAllBranches, fetchBranchById } from "./branches";
 import { createBranch } from "./branches/createBranch";
 import { deleteBranch } from "./branches/deleteBranch";
 import { updateBranch } from "./branches/updateBranch";
-import { fetchNeighborhoodById, createNeighborhood, updateNeighborhood, deleteNeighborhood, fetchAllNeighborhoods } from "./neighborhoods";
+import {
+  fetchNeighborhoodById,
+  createNeighborhood,
+  updateNeighborhood,
+  deleteNeighborhood,
+  fetchAllNeighborhoods,
+} from "./neighborhoods";
 import { createProduct, fetchAllProducts, fetchProductById } from "./products";
+import {
+  createSupermarket,
+  deleteSupermarket,
+  fetchAllSupermarkets,
+  fetchSupermarketById,
+  updateSupermarket,
+} from "./supermarkets";
 
 export interface EndpointParameter {
   name: string;
@@ -157,7 +170,7 @@ export const AVAILABLE_ENDPOINTS: TableEndpoints[] = [
             type: "string",
             required: true,
             description: "Neighborhood name",
-          }
+          },
         ],
       },
       {
@@ -177,7 +190,7 @@ export const AVAILABLE_ENDPOINTS: TableEndpoints[] = [
             type: "string",
             required: true,
             description: "Neighborhood name",
-          }
+          },
         ],
       },
       {
@@ -191,6 +204,79 @@ export const AVAILABLE_ENDPOINTS: TableEndpoints[] = [
             type: "number",
             required: true,
             description: "Neighborhood ID",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    tableName: "Supermarkets",
+    endpoints: [
+      {
+        path: "/supermarkets",
+        method: "GET",
+        description: "Get all supermarkets",
+        apiFunction: fetchAllSupermarkets,
+      },
+      {
+        path: "/supermarkets/:id",
+        method: "GET",
+        description: "Get supermarket by ID",
+        apiFunction: fetchSupermarketById,
+        parameters: [
+          {
+            name: "id",
+            type: "number",
+            required: true,
+            description: "Supermarket ID",
+          },
+        ],
+      },
+      {
+        path: "/supermarkets",
+        method: "POST",
+        description: "Create new supermarket",
+        apiFunction: createSupermarket,
+        parameters: [
+          {
+            name: "name",
+            type: "string",
+            required: true,
+            description: "Supermarket name",
+          },
+        ],
+      },
+      {
+        path: "/supermarkets/:id",
+        method: "PUT",
+        description: "Update supermarket",
+        apiFunction: updateSupermarket,
+        parameters: [
+          {
+            name: "id",
+            type: "number",
+            required: true,
+            description: "Supermarket ID",
+          },
+          {
+            name: "name",
+            type: "string",
+            required: true,
+            description: "Supermarket name",
+          },
+        ],
+      },
+      {
+        path: "/supermarkets/:id",
+        method: "DELETE",
+        description: "Delete supermarket",
+        apiFunction: deleteSupermarket,
+        parameters: [
+          {
+            name: "id",
+            type: "number",
+            required: true,
+            description: "Supermarket ID",
           },
         ],
       },
