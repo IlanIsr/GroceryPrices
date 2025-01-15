@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const navigation = [
   { name: "Home", href: "#", current: true },
   { name: "Database", href: "/database", current: false },
-  { name: "App", href: "#", current: false },
+  { name: "App", href: "/app", current: false },
 ];
 
 export default function RootLayout({

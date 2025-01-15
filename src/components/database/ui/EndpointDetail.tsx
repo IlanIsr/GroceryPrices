@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { StatusBadge } from './StatusBadge';
-import { EndpointParameter } from '@/api';
+import { EndpointParameter } from '@/api/index.type';
 
 interface EndpointDetailProps {
   tableName: string;
