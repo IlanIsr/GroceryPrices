@@ -1,19 +1,11 @@
 import api from "@/utils/api";
+import { Neighborhood } from ".";
 
-export type Neighborhood = {
-  id: number;
-  name: string;
-};
-
-// Fonction pour récupérer toutes les Neighborhood
-const fetchAllNeighborhood = async (): Promise<Neighborhood[]> => {
+export async function fetchAllNeighborhoods(): Promise<Neighborhood[]> {
   try {
-    const response = await api.get<Neighborhood[]>("/neighborhood"); // Typage de la réponse Axios
-    return response.data; // Typage automatique grâce à Axios
+    const response = await api.get<void, { data: Neighborhood[] }>("/neighborhoods");
+    return response.data;
   } catch (error) {
-    console.error("Erreur lors de la récupération des Neighborhood :", error);
-    throw error; // Vous pouvez propager l'erreur si besoin
+    throw new Error(`Failed to fetch neighborhoods: ${error}`);
   }
-};
-
-export { fetchAllNeighborhood };
+} 

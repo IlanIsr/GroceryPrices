@@ -1,18 +1,11 @@
 import api from "@/utils/api";
-import { Neighborhood } from "./getNeighborhoods";
+import { Neighborhood } from ".";
 
-// Fonction pour récupérer une Neighborhood par son ID
-const fetchNeighborhoodById = async (id: number): Promise<Neighborhood> => {
+export async function fetchNeighborhoodById({ id }: Pick<Neighborhood, "id">): Promise<Neighborhood> {
   try {
-    const response = await api.get<Neighborhood>(`/neighborhood/${id}`); // Typage de la réponse
-    return response.data; // Retourne la Neighborhood
+    const response = await api.get<void, { data: Neighborhood }>(`/neighborhoods/${id}`);
+    return response.data;
   } catch (error) {
-    console.error(
-      `Erreur lors de la récupération de la Neighborhood avec l'ID ${id} :`,
-      error
-    );
-    throw error; // Vous pouvez propager l'erreur si besoin
+    throw new Error(`Failed to fetch neighborhood: ${error}`);
   }
-};
-
-export { fetchNeighborhoodById };
+} 
