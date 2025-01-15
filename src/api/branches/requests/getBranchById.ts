@@ -1,11 +1,9 @@
 import api from "@/utils/api";
-import { Supermarket } from ".";
-
+import { Branch } from "../index.type";
 // Fonction pour récupérer une branche par son ID
-const fetchSupermarketById = async ({ id }: Props): Promise<Supermarket> => {
-  console.log("id", id);
+const fetchBranchById = async (id: number): Promise<Branch> => {
   try {
-    const response = await api.get<Supermarket>(`/supermarkets/${id}`); // Typage de la réponse
+    const response = await api.get<Branch>(`/branches/${id}`); // Typage de la réponse
     return response.data; // Retourne la branche
   } catch (error) {
     console.error(
@@ -16,8 +14,4 @@ const fetchSupermarketById = async ({ id }: Props): Promise<Supermarket> => {
   }
 };
 
-export { fetchSupermarketById };
-
-interface Props {
-  id: number;
-}
+export { fetchBranchById };

@@ -1,5 +1,5 @@
 import api from "@/utils/api";
-import { Supermarket, SupermarketOmitId } from ".";
+import { Supermarket, SupermarketOmitId } from "../index.type";
 
 export async function updateSupermarket({
   id,

@@ -1,10 +1,9 @@
 import api from "@/utils/api";
-import { Branch } from ".";
-
+import { Supermarket } from "../index.type";
 // Fonction pour récupérer toutes les branches
-const fetchAllBranches = async (): Promise<Branch[]> => {
+const fetchAllSupermarkets = async (): Promise<Supermarket[]> => {
   try {
-    const response = await api.get<Branch[]>("/branches"); // Typage de la réponse Axios
+    const response = await api.get<Supermarket[]>("/supermarkets"); // Typage de la réponse Axios
     return response.data; // Typage automatique grâce à Axios
   } catch (error) {
     console.error("Erreur lors de la récupération des branches :", error);
@@ -12,4 +11,4 @@ const fetchAllBranches = async (): Promise<Branch[]> => {
   }
 };
 
-export { fetchAllBranches };
+export { fetchAllSupermarkets };
