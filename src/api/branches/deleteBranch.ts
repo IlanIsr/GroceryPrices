@@ -1,0 +1,17 @@
+import api from "@/utils/api";
+import { Branch } from ".";
+
+interface DeleteResponse {
+  message: string;
+}
+
+export async function deleteBranch({ id }: Pick<Branch, "id">): Promise<DeleteResponse> {
+  try {
+    await api.delete<void, void>(`/branches/${id}`);
+    return {
+      message: "Branch deleted successfully"
+    };
+  } catch (error) {
+    throw new Error(`Failed to delete branch: ${error}`);
+  }
+} 
