@@ -43,6 +43,8 @@ export const EndpointDetail = ({ tableName, endpoint }: EndpointDetailProps) => 
         return acc;
       }, {} as Record<string, any>) || {};
 
+      console.log("args", args);
+
       const data = await endpoint.apiFunction(args);
       setResponse(data);
       setStatus(200);
