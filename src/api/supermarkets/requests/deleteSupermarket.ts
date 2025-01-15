@@ -1,5 +1,5 @@
 import api from "@/utils/api";
-import { Supermarket } from ".";
+import { Supermarket } from "../index.type";
 
 interface DeleteResponse {
   message: string;

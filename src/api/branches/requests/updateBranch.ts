@@ -1,5 +1,5 @@
 import api from "@/utils/api";
-import { Branch, BranchOmitId } from ".";
+import { Branch, BranchOmitId } from "../index.type";
 
 export async function updateBranch({
   id,

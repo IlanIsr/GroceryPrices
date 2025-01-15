@@ -1,5 +1,5 @@
 import api from "@/utils/api";
-import Product from "../index.type";
+import { Product } from "../index.type";
 
 // Fonction pour récupérer toutes les products
 const fetchAllProducts = async (): Promise<Product[]> => {

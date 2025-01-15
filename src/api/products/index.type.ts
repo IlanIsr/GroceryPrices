@@ -6,4 +6,4 @@ type Product = {
 
 type ProductOmitId = Omit<Product, "id">;
 
-export type { Product as default, ProductOmitId };
+export type { Product , ProductOmitId };

@@ -1,5 +1,5 @@
 import api from "@/utils/api";
-import { Branch } from ".";
+import { Branch } from "../index.type";
 
 interface DeleteResponse {
   message: string;

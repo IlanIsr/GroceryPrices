@@ -1,5 +1,5 @@
 import api from "@/utils/api";
-import { Neighborhood } from ".";
+import { Neighborhood } from "../index.type";
 
 interface DeleteResponse {
   message: string;

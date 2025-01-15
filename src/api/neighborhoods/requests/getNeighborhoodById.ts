@@ -1,5 +1,5 @@
 import api from "@/utils/api";
-import { Neighborhood } from ".";
+import { Neighborhood } from "../index.type";
 
 export async function fetchNeighborhoodById({ id }: Pick<Neighborhood, "id">): Promise<Neighborhood> {
   try {
