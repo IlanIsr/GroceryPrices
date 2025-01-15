@@ -2,6 +2,7 @@ import { fetchAllBranches, fetchBranchById } from "./branches";
 import { createBranch } from "./branches/createBranch";
 import { deleteBranch } from "./branches/deleteBranch";
 import { updateBranch } from "./branches/updateBranch";
+import { fetchNeighborhoodById, createNeighborhood, updateNeighborhood, deleteNeighborhood, fetchAllNeighborhoods } from "./neighborhoods";
 import { createProduct, fetchAllProducts, fetchProductById } from "./products";
 
 export interface EndpointParameter {
@@ -117,6 +118,79 @@ export const AVAILABLE_ENDPOINTS: TableEndpoints[] = [
             type: "number",
             required: true,
             description: "Branch ID",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    tableName: "Neighborhoods",
+    endpoints: [
+      {
+        path: "/neighborhoods",
+        method: "GET",
+        description: "Get all neighborhoods",
+        apiFunction: fetchAllNeighborhoods,
+      },
+      {
+        path: "/neighborhoods/:id",
+        method: "GET",
+        description: "Get neighborhood by ID",
+        apiFunction: fetchNeighborhoodById,
+        parameters: [
+          {
+            name: "id",
+            type: "number",
+            required: true,
+            description: "Neighborhood ID",
+          },
+        ],
+      },
+      {
+        path: "/neighborhoods",
+        method: "POST",
+        description: "Create new neighborhood",
+        apiFunction: createNeighborhood,
+        parameters: [
+          {
+            name: "name",
+            type: "string",
+            required: true,
+            description: "Neighborhood name",
+          }
+        ],
+      },
+      {
+        path: "/neighborhoods/:id",
+        method: "PUT",
+        description: "Update neighborhood",
+        apiFunction: updateNeighborhood,
+        parameters: [
+          {
+            name: "id",
+            type: "number",
+            required: true,
+            description: "Neighborhood ID",
+          },
+          {
+            name: "name",
+            type: "string",
+            required: true,
+            description: "Neighborhood name",
+          }
+        ],
+      },
+      {
+        path: "/neighborhoods/:id",
+        method: "DELETE",
+        description: "Delete neighborhood",
+        apiFunction: deleteNeighborhood,
+        parameters: [
+          {
+            name: "id",
+            type: "number",
+            required: true,
+            description: "Neighborhood ID",
           },
         ],
       },
