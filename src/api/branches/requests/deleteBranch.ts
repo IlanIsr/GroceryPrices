@@ -1,4 +1,4 @@
-import api from "@/utils/api";
+import api from "@/api/apiSettings";
 import { Branch } from "../index.type";
 
 interface DeleteResponse {

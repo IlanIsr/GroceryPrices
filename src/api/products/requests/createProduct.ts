@@ -1,4 +1,4 @@
-import api from "@/utils/api";
+import api from "@/api/apiSettings";
 import { ProductOmitId } from "../index.type";
 
 const createProduct = async ({ name, code }: ProductOmitId) => {

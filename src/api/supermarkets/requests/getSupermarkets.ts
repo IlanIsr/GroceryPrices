@@ -1,4 +1,4 @@
-import api from "@/utils/api";
+import api from "@/api/apiSettings";
 import { Supermarket } from "../index.type";
 // Fonction pour récupérer toutes les branches
 const fetchAllSupermarkets = async (): Promise<Supermarket[]> => {

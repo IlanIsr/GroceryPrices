@@ -1,4 +1,4 @@
-import api from "@/utils/api";
+import api from "@/api/apiSettings";
 import { Product } from "../index.type";
 
 // Fonction pour récupérer toutes les products

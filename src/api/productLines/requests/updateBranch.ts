@@ -1,4 +1,4 @@
-import api from "@/utils/api";
+import api from "@/api/apiSettings";
 import ProductLine, { ProductLineOmitId } from "../index.type";
 
 export async function updateProductLine({

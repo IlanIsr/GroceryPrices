@@ -1,4 +1,4 @@
-import api from "@/utils/api";
+import api from "@/api/apiSettings";
 import { Neighborhood } from "../index.type";
 
 export async function fetchAllNeighborhoods(): Promise<Neighborhood[]> {

@@ -1,4 +1,5 @@
-import api from "@/utils/api";
+
+import api from "@/api/apiSettings";
 import { Branch, BranchOmitId } from "../index.type";
 
 export async function createBranch({

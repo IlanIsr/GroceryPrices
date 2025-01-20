@@ -1,4 +1,4 @@
-import api from "@/utils/api";
+import api from "@/api/apiSettings";
 import { ProductLineOmitId } from "../index.type";
 
 const createProductLine = async ({

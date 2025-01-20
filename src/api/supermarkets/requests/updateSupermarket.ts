@@ -1,4 +1,4 @@
-import api from "@/utils/api";
+import api from "@/api/apiSettings";
 import { Supermarket, SupermarketOmitId } from "../index.type";
 
 export async function updateSupermarket({
