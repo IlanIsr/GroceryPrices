@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Endpoint } from "@/api";
 import { LeftPanel, RightPanel } from "@/components/database";
 import Navbar from "@/app/Navbar";
+import { Endpoint } from "@/api/index.type";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
@@ -10,7 +10,9 @@ const navigation = [
 ];
 
 const DatabasePage = () => {
-  const [selectedEndpoint, setSelectedEndpoint] = useState<Endpoint | null>(null);
+  const [selectedEndpoint, setSelectedEndpoint] = useState<Endpoint | null>(
+    null
+  );
   const [selectedTable, setSelectedTable] = useState<string>("");
 
   const handleEndpointSelect = (tableName: string, endpoint: Endpoint) => {
