@@ -1,6 +1,6 @@
-import { Endpoint, EndpointParameter } from "@/api";
-import { EndpointDetail } from "..";
+import { Endpoint, EndpointParameter } from "@/api/index.type";
 import { useState } from "react";
+import { EndpointDetail } from "./EndpointDetail";
 
 interface RightPanelProps {
   selectedEndpoint: Endpoint | null;

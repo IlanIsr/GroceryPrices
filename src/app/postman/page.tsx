@@ -1,15 +1,11 @@
+"use client";
+
 import { useState } from "react";
-import { LeftPanel, RightPanel } from "@/components/database";
-import Navbar from "@/app/Navbar";
 import { Endpoint } from "@/api/index.type";
+import { LeftPanel } from "./components/LeftPanel";
+import { RightPanel } from "./components/RightPanel/RightPanel";
 
-const navigation = [
-  { name: "Home", href: "/", current: false },
-  { name: "Database", href: "/database", current: true },
-  { name: "App", href: "#", current: false },
-];
-
-const DatabasePage = () => {
+const PostmanPage = () => {
   const [selectedEndpoint, setSelectedEndpoint] = useState<Endpoint | null>(
     null
   );
@@ -22,9 +18,6 @@ const DatabasePage = () => {
 
   return (
     <div className="flex flex-col h-screen bg-database-primary">
-      <div className="bg-database-secondary">
-        <Navbar navbarItems={navigation} />
-      </div>
       <div className="flex flex-1 overflow-hidden">
         <LeftPanel
           selectedEndpoint={selectedEndpoint}
@@ -39,4 +32,4 @@ const DatabasePage = () => {
   );
 };
 
-export default DatabasePage;
+export default PostmanPage;
