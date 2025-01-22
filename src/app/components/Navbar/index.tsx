@@ -1,12 +1,17 @@
+"use client";
+
 import { Disclosure } from "@headlessui/react";
 import DisclosurePanelComponent from "./Disclosure/DisclosurePanel";
 import DisclosureButtonComponent from "./Disclosure/DisclosureButton";
+import { usePathname } from 'next/navigation';
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
 function Navbar({ navbarItems }: Props) {
+  const pathname = usePathname();
+
   return (
     <Disclosure as="nav" className="bg-database-tertiary">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -21,9 +26,9 @@ function Navbar({ navbarItems }: Props) {
                   <a
                     key={index}
                     href={navbarItem.href}
-                    aria-current={navbarItem.current ? "page" : undefined}
+                    aria-current={pathname === navbarItem.href ? "page" : undefined}
                     className={classNames(
-                      navbarItem.current
+                      pathname === navbarItem.href
                         ? "bg-database-hover text-white"
                         : "text-gray-300 hover:bg-database-hover hover:text-white",
                       "rounded-md px-3 py-2 text-sm font-medium"
